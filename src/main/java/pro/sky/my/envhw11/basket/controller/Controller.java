@@ -6,6 +6,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import pro.sky.my.envhw11.basket.service.BasketService;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/store/order/")
 public class Controller {
@@ -17,7 +19,7 @@ public class Controller {
     }
 
     @GetMapping("/add")
-    public boolean add(@RequestParam(required = false, name = "id") int id) {
+    public boolean add(@RequestParam(required = false, name = "id") List<Integer> id) {
         return basketService.add(id);
     }
 

@@ -25,7 +25,7 @@ public class Controller {
 
     @GetMapping("/get")
     public String get() {
-        return basketService.get();
+        return basketService.get().replace("[", "").replace("]", "").toString();
     }
 
 }
